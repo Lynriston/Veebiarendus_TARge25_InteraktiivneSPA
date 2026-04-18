@@ -31,13 +31,15 @@ export default function App() {
     ));
   };
 
-  const editProject = (id: number, title: string, description: string) => {
-    setProjects(projects.map(project => 
-      project.id === id ? { ...project, title, description } : project
+  const editProject = (id: number, title: string) => {
+    setProjects(projects.map(project =>
+      project.id === id ? { ...project, title } : project
     ));
   };
 
-  const filteredProjects = projects.filter(project => filter === 'liked' ? project.liked : true);
+  const safeProjects = Array.isArray(projects) ? projects : [];
+
+  const filteredProjects = safeProjects.filter(project => filter === 'liked' ? project.liked : true);
 
   return (
     <div className={darkMode ? 'app dark' : 'app'}>
@@ -49,7 +51,7 @@ export default function App() {
       <ProjectInput addProject={addProject} />
       <FilterBar setFilter={setFilter} />
 
-      {projects.length === 0 ? (
+      {safeProjects.length === 0 ? (
         <p className="empty">Pole veel projekte</p>
       ) : (
         <ProjectList 
