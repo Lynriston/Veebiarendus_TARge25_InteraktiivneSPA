@@ -1,65 +1,188 @@
+body {
+  margin: 0;
+  background: #0f172a;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* APP WRAPPER */
 .app {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 20px;
-  background: #f4f4f4;
   min-height: 100vh;
+  padding: 40px;
+  font-family: Inter, Arial, sans-serif;
+  transition: background 0.5s, color 0.5s ease;
 }
 
-.dark {
-  background: #1e1e1e;
-  color: white;
-}
-
-.header { 
+/* HEADER */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 25px;
 }
 
-.input-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
 }
 
-.input-row input {
-  padding: 8px;
-}
-
-.filter-bar {
-  margin-top: 10px;
-}
-
-.filter-bar button {
-  margin-right: 10px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.card {
-  background: white;
-  padding: 15px;
+/* BUTTONS */
+button {
+  background: #3b82f6;
+  border: none;
+  padding: 10px 14px;
   border-radius: 10px;
+  color: white;
+  cursor: pointer;
   transition: 0.2s;
 }
 
-.card:hover {
-  transform: scale(1.03);
+button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
 }
 
+/* INPUT ROW */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.input-row input {
+  padding: 10px;
+  height: 42px;
+  box-sizing: border-box;
+}
+
+.input-row button {
+  height: 42px;
+  white-space: nowrap;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #1f2937;
+  color: white;
+}
+
+input::placeholder {
+  opacity: 0.6;
+}
+
+input, button {
+  transition: background 0.4s ease, 
+  color 0.4s ease, 
+  border-color 0.4s ease;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-bar button.active {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* CARD */
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.2s;
+  border: 1px solid #334155;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card p {
+  color: #94a3b8;
+}
+
+/* ACTIONS */
 .actions {
-  margin-top: 10px;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
+/* EMPTY */
 .empty {
   text-align: center;
   margin-top: 40px;
-  color: gray;
+  color: #64748b;
 }
+
+/* THEME WRAPPER */
+.app.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.app.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* INPUT light fix */
+.app.light input {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* FILTER buttons light */
+.app.light button {
+  background: #3b82f6;
+  color: white;
+}
+
+/* CARD LIGHT */
+.app.light .card {
+  background: white;
+  color: #0f172a;
+  border: 1px solid #e2e8f2;
+}
+
+/* CARD DARK */
+.app.dark .card {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+}
+
+.card {
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+

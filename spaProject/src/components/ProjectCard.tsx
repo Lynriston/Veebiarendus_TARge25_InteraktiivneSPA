@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-export default function ProjectCard({ project, deleteProject, toggleLike, editProject }: any) {
+export default function ProjectCard(props: any) {
+    const { project, deleteProject, toggleLike, editProject } = props;
     if (!project) return null;
     const [isEditing, setIsEditing] = useState(false);
-    const [newTitle, setTitle] = useState(project?.title || "");
+    const [newTitle, setNewTitle] = useState(project?.title || "");
+
 
     return (
         <div className="card">
             {isEditing ? (
                 <input
                     value={newTitle}
-                    onChange={e => setTitle(e.target.value)}
+                    onChange={e => setNewTitle(e.target.value)}
                     onBlur={() => {
                         if (!project) return;
                         editProject(project.id, newTitle);
