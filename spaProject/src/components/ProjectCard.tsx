@@ -18,6 +18,7 @@ export default function ProjectCard(props: any) {
                 <input
                     value={newTitle}
                     onChange={e => setNewTitle(e.target.value)}
+                    //Kui input kaotab fookuse, salvestatakse uus pealkiri ja väljutakse muutmise režiimist.
                     onBlur={() => {
                         if (!project) return;
                         editProject(project.id, newTitle);
@@ -25,12 +26,15 @@ export default function ProjectCard(props: any) {
                     }}
                 />
             ) : (
+                //Peale vajutades pealkirjale, lülitub see muutmise režiimi.
                 <h2 onClick={() => setIsEditing(true)}>{project.title}</h2>
             )}
 
+            // Kuvab projekti kirjelduse
             <p>{project.description}</p>
 
             <div className="actions">
+                // Vajutades nuppu, vahetab meeldimise olekut.
                 <button onClick={() => toggleLike(project.id)}>
                     {project.liked ? 'Unlike' : 'Like'}
                 </button>
