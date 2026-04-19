@@ -83,11 +83,11 @@ export default function App() {
         <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? '☀️' : '🌙'}</button>
       </header>
 
-      //Projekti sisestamise vorm ja filtrite tööriistariba
+      {/* //Projekti sisestamise vorm ja filtrite tööriistariba */}
       <ProjectInput addProject={addProject} />
       <FilterBar setFilter={setFilter} current={filter} />
 
-      // Kui projekte pole, näidatakse sõnumit. Vastasel juhul renderdatakse projektide nimekiri.
+      {/* // Kui projekte pole, näidatakse sõnumit. Vastasel juhul renderdatakse projektide nimekiri. */}
       {projects.length === 0 ? (
         <p className="empty">No projects yet.</p>
       ) : (
