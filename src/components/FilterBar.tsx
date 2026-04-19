@@ -3,19 +3,19 @@ export default function FilterBar({ setFilter, current }: any) {
   return (
     <div className="filter-bar">
       <button onClick={() => setFilter('all')} className={current === 'all' ? 'active' : ''}>
-        Kõik
+        All
       </button>
 
       <button onClick={() => setFilter('liked')} className={current === 'liked' ? 'active' : ''}>
-        Lemmikud
+        Favorites
       </button>
 
       <button onClick={() => setFilter('newest')} className={current === 'newest' ? 'active' : ''}>
-        Uusimad
+        Newest
       </button>
 
       <button onClick={() => setFilter('oldest')} className={current === 'oldest' ? 'active' : ''}>
-        Vanimad
+        Oldest
       </button>
     </div>
   );
