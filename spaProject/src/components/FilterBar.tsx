@@ -1,3 +1,4 @@
+//Kuvab filtririba, mis võimaldab kasutajal valida, milliseid postitusi ta soovib näha: kõiki, lemmikuid, uusimaid või vanimaid.
 export default function FilterBar({ setFilter, current }: any) {
   return (
     <div className="filter-bar">
