@@ -30,16 +30,16 @@ export default function ProjectCard(props: any) {
                 <h2 onClick={() => setIsEditing(true)}>{project.title}</h2>
             )}
 
-            // Kuvab projekti kirjelduse
+            {/* // Kuvab projekti kirjelduse */}
             <p>{project.description}</p>
 
             <div className="actions">
-                // Vajutades nuppu, vahetab meeldimise olekut.
+                {/* // Vajutades nuppu, vahetab meeldimise olekut. */}
                 <button onClick={() => toggleLike(project.id)}>
                     {project.liked ? 'Unlike' : 'Like'}
                 </button>
                 <button onClick={() => deleteProject(project.id)}>Delete</button>
             </div>
-        </div>
+        </div>  
     );
 }

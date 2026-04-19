@@ -9,7 +9,7 @@ export default function ProjectList({ projects, deleteProject, toggleLike, editP
     //Render.
     return (
         <div className="grid">
-            //Käib läbi projekti massiivi ja kuvab iga projekti jaoks ProjectCard komponendi.
+            {/* //Käib läbi projekti massiivi ja kuvab iga projekti jaoks ProjectCard komponendi. */}
             {projects.map((project: Project) => (
                 // Iga ProjectCard saab propsidena projekti andmed ja funktsioonid, 
                 // mida kasutatakse projekti haldamiseks (kustutamine, meeldimine, pealkirja muutmine).

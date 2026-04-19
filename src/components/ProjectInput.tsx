@@ -19,7 +19,7 @@ export default function ProjectInput({ addProject}: any) {
     //Render.
     return (
         <div className="input-row">
-            //Controllib inputi.
+            {/* //Controllib inputi. */}
             <input
                 value={title}
                 onChange={e => setTitle(e.target.value)}
@@ -27,13 +27,13 @@ export default function ProjectInput({ addProject}: any) {
                 // Võimaldab lisada projekti Enteri klahviga.
                 onKeyDown={(e) => e.key === "Enter" && handleAdd()}
             />
-            //lisab teise inputi projekti kirjelduse jaoks.
+            {/* //lisab teise inputi projekti kirjelduse jaoks. */}
             <input
                 value={description}
                 onChange={e => setDescription(e.target.value)}
                 placeholder="Description"
             />
-            //Sama nupp, mis võimaldab lisada projekti klikkides.
+            {/* //Sama nupp, mis võimaldab lisada projekti klikkides. */}
             <button onClick={handleAdd}>Add Project</button>
         </div>
     );
