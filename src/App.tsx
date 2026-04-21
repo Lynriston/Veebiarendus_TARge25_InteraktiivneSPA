@@ -78,27 +78,34 @@ export default function App() {
   return (
     //dark mode ja light mode vahel vahetamiseks kasutatakse CSS klasse 'dark' ja 'light'
     <div className={darkMode ? 'app dark' : 'app light'}>
-      <header className="header">
-        <h1>My Developer Portfolio</h1>
-        <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? '☀️' : '🌙'}</button>
-      </header>
+      <div className="container">
+        <header className="header">
+          <h1>My Developer Portfolio</h1>
+          <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? '☀️' : '🌙'}</button>
+        </header>
+        <div className="top-bar">
+          {/* //Projekti sisestamise vorm ja filtrite tööriistariba */}
+          <ProjectInput addProject={addProject} />
+          <FilterBar setFilter={setFilter} current={filter} />
+        </div>
+        
 
-      {/* //Projekti sisestamise vorm ja filtrite tööriistariba */}
-      <ProjectInput addProject={addProject} />
-      <FilterBar setFilter={setFilter} current={filter} />
-
-      {/* // Kui projekte pole, näidatakse sõnumit. Vastasel juhul renderdatakse projektide nimekiri. */}
-      {projects.length === 0 ? (
-        <p className="empty">No projects yet.</p>
-      ) : (
-        // Projektide nimekiri, kus saab kustutada, meeldida ja redigeerida projekte.
-        <ProjectList 
-          projects={filteredProjects}
-          deleteProject={deleteProject}
-          toggleLike={toggleLike}
-          editProject={editProject}
-        />
-      )}
+        {/* // Kui projekte pole, näidatakse sõnumit. Vastasel juhul renderdatakse projektide nimekiri. */}
+        {projects.length === 0 ? (
+          <p className="empty">No projects yet.</p>
+        ) : (
+          // Projektide nimekiri, kus saab kustutada, meeldida ja redigeerida projekte.
+          <ProjectList 
+            projects={filteredProjects}
+            deleteProject={deleteProject}
+            toggleLike={toggleLike}
+            editProject={editProject}
+          />
+        )}
+      </div>
+        <footer>
+          @Risto Kivisitk 2026
+        </footer>
     </div>
   )
 }
